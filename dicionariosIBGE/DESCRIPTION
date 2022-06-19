@@ -1,16 +1,16 @@
 Package: dicionariosIBGE
 Type: Package
-Title: Dictionaries for reading survey microdata from IBGE
-Version: 1.1.1
-Date: 2010-05-14
-Author: Erick Fonseca <erickrfonseca@gmail.com>, Alexandre
-        Rademaker<alexandre.rademaker@fgv.br>
-Maintainer: Erick Fonseca <erickrfonseca@gmail.com>
-Description: This package contains dictionaries for reading microdata
+Title: Dictionaries for reading microdata surveys from IBGE
+Version: 1.6
+Date: 2014-08-13
+Author: Alexandre Rademaker <alexandre.rademaker@fgv.br>
+Maintainer: Alexandre Rademaker <alexandre.rademaker@fgv.br>
+Description: This package contains the dictionaries for reading microdata
         from IBGE (Brazilian Institute of Geography and Statistics)
         surveys PNAD, PME and POF.
-License: GNU Public License
-Suggests: IBGEPesq
-LazyLoad: yes
-Packaged: 2010-05-14 20:42:13 UTC
+License: GPL (>= 2)
+Depends: R (>= 2.15.1)
+Repository: CRAN
+URL: http://github.com/arademaker/dicionariosIBGE
+BugReports: http://github.com/arademaker/dicionariosIBGE/issues
 

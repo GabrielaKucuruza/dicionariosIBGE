@@ -1,5 +1,6 @@
 \name{dicPNAD}
 \docType{data}
+
 \alias{dicPNAD}
 \alias{dicPNAD1983}
 \alias{dicPNAD1988}
@@ -14,9 +15,16 @@
 \alias{dicPNAD2003}
 \alias{dicPNAD2004}
 \alias{dicPNAD2005}
-\alias{dicPNAD2006}
-\alias{dicPNAD2006supl}
 \alias{dicPNAD2007}
+\alias{dicPNAD2009}
+\alias{dicPNAD2011}
+\alias{dicPNAD2012}
+\alias{dicPNAD2013}
+\alias{dicPNAD2014}
+\alias{dicPNAD2015}
+
+
+
 
 \alias{dicdom1983}
 \alias{dicpes1983}
@@ -38,24 +46,32 @@
 \alias{dicpes2001}
 \alias{dicdom2002}
 \alias{dicpes2002}
-\alias{dicdom2003}
-\alias{dicpes2003}
-\alias{dicdom2004}
-\alias{dicpes2004}
-\alias{dicdom2005}
-\alias{dicpes2005}
-\alias{dicdom2006}
-\alias{dicpes2006}
-\alias{dicdom2006supl}
-\alias{dicpes2006supl}
-\alias{dicdom2007}
-\alias{dicpes2007}
+\alias{dic_dom_2003}
+\alias{dic_pessoas_2003}
+\alias{dic_dom_2004}
+\alias{dic_pessoas_2004}
+\alias{dic_dom_2005}
+\alias{dic_pessoas_2005}
+\alias{dic_dom_2007}
+\alias{dic_pessoas_2007}
+\alias{dic_dom_2009}
+\alias{dic_pessoas_2009}
+\alias{dic_dom_2011}
+\alias{dic_pessoas_2011}
+\alias{dic_dom_2012}
+\alias{dic_pessoas_2012}
+\alias{dic_dom_2013}
+\alias{dic_pessoas_2013}
+\alias{dic_dom_2014}
+\alias{dic_pessoas_2014}
+\alias{dic_dom_2015}
+\alias{dic_pessoas_2015}
 
 \encoding{UTF-8}
 \title{Data Dictionaries for PNAD}
 \description{
   One data dictionary for people records and one for house records,
-  for each PNAD of the years 1983, 1988 and from 1993 to 2007.
+  for each PNAD of the years 1983, 1988 and from 1993 to 2015.
 }
 \format{
   Each dictionary is a data frame with one line for each survey variable,
@@ -69,5 +85,5 @@
     desc \tab character \tab Short description
   }
 }
-\source{PNAD documentation available in the CD's made by IBGE}
+\source{PNAD documentation available in the IBGE website}
 \keyword{datasets}

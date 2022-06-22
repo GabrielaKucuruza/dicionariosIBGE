@@ -1,7 +1,7 @@
-\name{dicdom2012}
+\name{dic_dom_2012}
 \docType{data}
 
-\alias{dicdom2012}
+\alias{dic_dom_2012}
 
 \encoding{UTF-8}
 \title{Data Dictionary for domiciles record PNAD 2012 survey}

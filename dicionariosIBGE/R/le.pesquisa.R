@@ -3,35 +3,39 @@ le.pesquisa <- function(dicionario, pathname.in, codigos, rotulos = NULL, tbloco
   inicios <- numeric(0)
   tamanhos <- numeric(0)
 
+  #Condições da função:
+  ## Se é um NA, print "You must provide the number of lines of the data file"
   if(is.na(nlines))
     stop(paste("You must provide the number of lines of the data file", substitute(dicionario), sep=" "))
-  
-  if( !all(c("inicio","cod", "tamanho", "desc") == colnames(dicionario)) )
+
+  ## Se os valores forem falsos, print "The", substitute(dicionario)," is not a valid object for 'dicionario' parameter"
+  if(!all(c("inicio","cod", "tamanho", "desc") == colnames(dicionario)) )
     stop(paste("The", substitute(dicionario)," is not a valid object for 'dicionario' parameter",sep=" "))
-      
-  if( ! all(c("cod", "valor", "rotulo") == colnames(rotulos)) )
+  
+  ## Se os valores forem falsos, print "The", substitute(dicionario)," is not a valid object for 'rotulos' parameter"
+  if(!all(c("cod", "valor", "rotulo") == colnames(rotulos)) )
     stop(paste("The", substitute(rotulos), "is not a valid object for 'rotulos' parameter", sep=" "))
   
   tmp <- merge(data.frame(cod = codigos, stringsAsFactors = FALSE), dicionario)
-  inicios <- tmp[,"inicio"]
-  tamanhos <- tmp[,"tamanho"]
+  inicios <- tmp[ ,"inicio"]
+  tamanhos <- tmp[ ,"tamanho"]
   rm(tmp)
-  
-  if ( length(inicios) == 0)
-      stop(paste("Variables do not exist in", substitute(dicionario), sep=" "))
+  ## Se o início do dado for == 0, print "Variables do not exist in", substitute(dicionario)  
+  if (length(inicios) == 0)
+    stop(paste("Variables do not exist in", substitute(dicionario), sep=" "))
 
+  ## Aqui é quando está lendo? "Will display a progress bar on the R console via text representation
   pb <- txtProgressBar(min = 0, max = (nlines/tbloco) * length(codigos), style = 3)
-
-  arq <- file(pathname.in, open="r")
+  arq <- file(pathname.in, open = "r")
   dados <- NULL
 
   process <- 0
   cont <- TRUE
   while (cont) {
-    bloco <- scan(file = arq, what = "", sep = "", nlines = tbloco, quiet = TRUE)
+    bloco <- scan(file = arq, what = " ", sep = " ", nlines = tbloco, quiet = TRUE)
     df.temp <- NULL
     for (k in 1:length(inicios)) {
-      coluna <- substr(bloco, inicios[k], inicios[k] + tamanhos[k] - 1)
+      coluna <- substr(bloco, inicios[k], inicios[k] + tamanhos[k] - 1) 
       if(is.null(df.temp))
         df.temp <- data.frame(type.convert(coluna))
       else 
@@ -39,24 +43,21 @@ le.pesquisa <- function(dicionario, pathname.in, codigos, rotulos = NULL, tbloco
       process <- process + 1
       setTxtProgressBar(pb, process)
     }
+    ## Se os dados forem nulos
     if(is.null(dados))
       dados <- df.temp
     else
       dados <- rbind(dados, df.temp)
-    
     if (length(bloco) < tbloco) 
       cont <- FALSE
   }
-  
   close(arq)
   rm(bloco, df.temp)
   colnames(dados) <- codigos
   close(pb)
-  
   if(is.null(rotulos)){
     return(dados)
   }
-
   for(n in 1:ncol(dados)){
     colname <- colnames(dados)[n]
     if(colname %in% rotulos$cod){
@@ -64,6 +65,5 @@ le.pesquisa <- function(dicionario, pathname.in, codigos, rotulos = NULL, tbloco
       dados[,n] <- factor(dados[,n], levels = tmp[,1], labels = tmp[,2])
     }
   }
-  
   return(dados)
 }

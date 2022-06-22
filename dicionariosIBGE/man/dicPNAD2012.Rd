@@ -8,7 +8,7 @@
 \description{
   This dataset contains 2 data.frames.
 
-  The two data.frames, \link{dicdom2012} and \link{dicpes2012}, are data
+  The two data.frames, \link{dic_dom_2012} and \link{dic_pessoas_2012}, are data
   dictionaries used by the fuction \link{le.pesquisa} for reading the
   two microdada files provided by IBGE.
   
@@ -17,8 +17,8 @@
 \format{A data set with 2 data.frames:
 
   \enumerate{
-    \item dicdom2012
-    \item dicpes2012
+    \item dic_dom_2012
+    \item dic_pessoas_2012
   }
 }
 
@@ -27,3 +27,5 @@
 
 \keyword{datasets}
 
+
+\keyword{datasets}

@@ -10,8 +10,8 @@
 
 \description{
   This package contains dictionaries for reading the following IBGE
-  surveys: PNAD(1983, 1988, 1993-2007), PME(2002-2009) and
-  POF(1987/1988, 1995/1996, 2002/2003, 2008/2009).
+  surveys: PNAD(1983, 1988, 1993-2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015), PME(2002-2009) and
+  POF(1987/1988, 1995/1996, 2002/2003, 2008/2009, 2017/2018).
   The data can be read using the function le.pesquisa from package
   IBGEPesq.
 }

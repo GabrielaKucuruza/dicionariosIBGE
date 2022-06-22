@@ -36,5 +36,5 @@
   }
 }
 \source{The dictionaries were made based on the documentation of the
-    PNAD survey available at \url{http://www.ibge.gov.br}.}
+    POF survey available at \url{http://www.ibge.gov.br}.}
 \keyword{datasets}
